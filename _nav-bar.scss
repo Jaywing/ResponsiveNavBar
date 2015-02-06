@@ -1,0 +1,116 @@
+/*------------------------------------*\
+    NAV-BAR.CSS
+
+    DEPENDANCIES
+        jquery.responsive-navbar.js
+
+\*------------------------------------*/
+
+// *
+// Variables
+// *
+
+$nav-bar-link-padding               : 0.6em 1em;
+$nav-bar-margin                     : 0 0 2em 0;
+
+$nav-bar-link-bg-color              : $color-white;
+$nav-bar-link-hover-bg-color        : $color-light-grey;
+$nav-bar-link-border-color          : $color-dark-grey;
+
+$nav-bar-responsive-bp              : 768px;
+$nav-bar-responsive-transition      : all 0.5s ease-in-out;
+$nav-bar-responsive-maxheight       : 450px;
+
+
+// *
+// Partials
+// *
+
+%nav-bar__link {
+    display: inline-block;
+    padding: $nav-bar-link-padding;
+    border: 1px solid $nav-bar-link-border-color;
+    background: $nav-bar-link-bg-color;
+    &:hover, &:focus {
+        background: $nav-bar-link-hover-bg-color;
+        text-decoration: none;
+    }
+}
+
+.nav-bar {
+    @include clearfix;
+    clear: both;
+    margin: $nav-bar-margin;
+    .nav-bar__trigger { display: none; } // hide trigger for normal navbar
+}
+
+.nav-bar__menu {
+    @include clearfix;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar__item {
+    margin: 0 -1px 0 0;
+    float:left;
+    a {
+        @extend %nav-bar__link;
+    }
+}
+
+.js-nav-bar--responsive.js-nav-bar--ready {
+    .nav-bar__trigger {
+        @extend %nav-bar__link;
+        display:block;
+        &:after {
+            content: " ≡";
+            float:right;
+            font-weight:bold;
+        }
+    }
+    .nav-bar__menu {
+        @include transition($nav-bar-responsive-transition);
+        overflow:hidden;
+        max-height:0;
+        height:0;
+    }
+    .nav-bar__item {
+        float:none;
+        margin:-1px 0 0;
+        a {
+            display:block;
+        }
+    }
+    &.nav-bar--active {
+        .nav-bar__menu {
+            max-height: $nav-bar-responsive-maxheight;
+            height: auto;
+        }
+        .nav-bar__trigger {
+            background: $nav-bar-link-hover-bg-color;
+            &:after { content: " x"; }
+        }
+    }
+}
+
+// reset menu for desktop viewport
+@include custom-mq($nav-bar-responsive-bp) {
+    .js-nav-bar--responsive.js-nav-bar--ready {
+        .nav-bar__trigger {
+            display: none;
+        }
+        .nav-bar__menu {
+            overflow: visible;
+            height: auto;
+            min-height: auto;
+        }
+        .nav-bar__item {
+            float: left;
+            margin: 0 -1px  0 0;
+            a {
+                display: inline-block;
+            }
+        }
+    }
+}
