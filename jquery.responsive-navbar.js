@@ -1,3 +1,26 @@
+/*
+ * Responsive nav-bar
+ *
+ * Dependancies:
+ *   jQuery
+ *
+ * Author:
+ *   James Taylor
+ *
+ * Date:
+ *   06/02/2015
+ *
+ * HTML Pattern:
+   <nav class="nav-bar js-nav-bar--responsive">
+     <a href="#nav-menu" class="nav-bar__trigger">Menu</a>
+     <ul id="nav-menu" class="nav-bar__menu">
+      <li class="nav-bar__item"><a href="#">Menu item</a></li>
+      ......
+    </ul>
+   </nav>
+ *
+ */
+
 $( function() {
   "use strict";
   
