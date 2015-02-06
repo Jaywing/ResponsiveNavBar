@@ -1,0 +1,81 @@
+/*------------------------------------*\
+    NAV-BAR.CSS
+
+    DEPENDANCIES
+        jquery.responsive-navbar.js
+
+\*------------------------------------*/
+.nav-bar__item a, .js-nav-bar--responsive.js-nav-bar--ready .nav-bar__trigger {
+  display: inline-block;
+  padding: 0.6em 1em;
+  border: 1px solid #BDC3C7;
+  background: #fff; }
+  .nav-bar__item a:hover, .js-nav-bar--responsive.js-nav-bar--ready .nav-bar__trigger:hover, .nav-bar__item a:focus, .js-nav-bar--responsive.js-nav-bar--ready .nav-bar__trigger:focus {
+    background: #EDEEF1;
+    text-decoration: none; }
+
+.nav-bar {
+  *zoom: 1;
+  clear: both;
+  margin: 0 0 2em 0; }
+  .nav-bar:before, .nav-bar:after {
+    content: " ";
+    display: table; }
+  .nav-bar:after {
+    clear: both; }
+  .nav-bar .nav-bar__trigger {
+    display: none; }
+
+.nav-bar__menu {
+  *zoom: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .nav-bar__menu:before, .nav-bar__menu:after {
+    content: " ";
+    display: table; }
+  .nav-bar__menu:after {
+    clear: both; }
+
+.nav-bar__item {
+  margin: 0 -1px 0 0;
+  float: left; }
+
+.js-nav-bar--responsive.js-nav-bar--ready .nav-bar__trigger {
+  display: block; }
+  .js-nav-bar--responsive.js-nav-bar--ready .nav-bar__trigger:after {
+    content: " ≡";
+    float: right;
+    font-weight: bold; }
+.js-nav-bar--responsive.js-nav-bar--ready .nav-bar__menu {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+  max-height: 0;
+  height: 0; }
+.js-nav-bar--responsive.js-nav-bar--ready .nav-bar__item {
+  float: none;
+  margin: -1px 0 0; }
+  .js-nav-bar--responsive.js-nav-bar--ready .nav-bar__item a {
+    display: block; }
+.js-nav-bar--responsive.js-nav-bar--ready.nav-bar--active .nav-bar__menu {
+  max-height: 450px;
+  height: auto; }
+.js-nav-bar--responsive.js-nav-bar--ready.nav-bar--active .nav-bar__trigger {
+  background: #EDEEF1; }
+  .js-nav-bar--responsive.js-nav-bar--ready.nav-bar--active .nav-bar__trigger:after {
+    content: " x"; }
+
+@media only screen and (min-width: 768px) {
+  .js-nav-bar--responsive.js-nav-bar--ready .nav-bar__trigger {
+    display: none; }
+  .js-nav-bar--responsive.js-nav-bar--ready .nav-bar__menu {
+    overflow: visible;
+    height: auto;
+    min-height: auto; }
+  .js-nav-bar--responsive.js-nav-bar--ready .nav-bar__item {
+    float: left;
+    margin: 0 -1px 0 0; }
+    .js-nav-bar--responsive.js-nav-bar--ready .nav-bar__item a {
+      display: inline-block; } }
