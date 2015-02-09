@@ -4,6 +4,9 @@
     DEPENDANCIES
         jquery.responsive-navbar.js
 
+         bourbon.io sass mixin (transition)
+        "custom-mq" mixin for the media query
+
 \*------------------------------------*/
 .nav-bar__item a, .js-nav-bar--responsive.js-nav-bar--ready .nav-bar__trigger {
   display: inline-block;
@@ -76,6 +79,6 @@
     min-height: auto; }
   .js-nav-bar--responsive.js-nav-bar--ready .nav-bar__item {
     float: left;
-    margin: 0 -1px 0 0; }
+    margin: 0px -1px 0 0; }
     .js-nav-bar--responsive.js-nav-bar--ready .nav-bar__item a {
       display: inline-block; } }
