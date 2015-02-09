@@ -3,8 +3,8 @@
 
     DEPENDANCIES
         jquery.responsive-navbar.js
-        
-        bourbon.io sass mixin (transition)
+
+         bourbon.io sass mixin (transition)
         "custom-mq" mixin for the media query
 
 \*------------------------------------*/
@@ -19,6 +19,8 @@ $nav-bar-margin                     : 0 0 2em 0;
 $nav-bar-link-bg-color              : $color-white;
 $nav-bar-link-hover-bg-color        : $color-light-grey;
 $nav-bar-link-border-color          : $color-dark-grey;
+$nav-bar-link-border-size           : 1px;
+$nav-bar-item-margin-size           : -1px;
 
 $nav-bar-responsive-bp              : 768px;
 $nav-bar-responsive-transition      : all 0.5s ease-in-out;
@@ -32,7 +34,7 @@ $nav-bar-responsive-maxheight       : 450px;
 %nav-bar__link {
     display: inline-block;
     padding: $nav-bar-link-padding;
-    border: 1px solid $nav-bar-link-border-color;
+    border: $nav-bar-link-border-size solid $nav-bar-link-border-color;
     background: $nav-bar-link-bg-color;
     &:hover, &:focus {
         background: $nav-bar-link-hover-bg-color;
@@ -55,7 +57,7 @@ $nav-bar-responsive-maxheight       : 450px;
 }
 
 .nav-bar__item {
-    margin: 0 -1px 0 0;
+    margin: 0 $nav-bar-item-margin-size 0 0;
     float:left;
     a {
         @extend %nav-bar__link;
@@ -80,7 +82,7 @@ $nav-bar-responsive-maxheight       : 450px;
     }
     .nav-bar__item {
         float:none;
-        margin:-1px 0 0;
+        margin:-$nav-bar-link-border-size 0 0;
         a {
             display:block;
         }
@@ -110,7 +112,7 @@ $nav-bar-responsive-maxheight       : 450px;
         }
         .nav-bar__item {
             float: left;
-            margin: 0 -1px  0 0;
+            margin: 0px $nav-bar-item-margin-size 0 0;
             a {
                 display: inline-block;
             }
