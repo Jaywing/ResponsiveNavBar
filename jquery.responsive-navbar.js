@@ -25,7 +25,7 @@
   'use strict';
 
   if (!doc.querySelector || !win.addEventListener) {
-      console.log('This browser don\'t cut the Mustard - Exiting off-canvas nav');
+      console.log('This browser don\'t cut the Mustard - Exiting responsive navbar');
       return;
   }
 
